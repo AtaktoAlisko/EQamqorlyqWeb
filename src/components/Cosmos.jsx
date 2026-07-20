@@ -578,18 +578,23 @@ export default function Cosmos({ start = true }) {
                       style={{ transformOrigin: `${c.x}px ${c.y}px` }}
                     />
                   )}
-                  <motion.circle
-                    cx={c.x}
-                    cy={c.y}
-                    r={c.objects.length > 1 ? 8 : 6}
-                    fill="rgb(var(--a))"
-                    stroke="var(--bg)"
-                    strokeWidth="2"
+                  {/* город с одним объектом — тонкое кольцо с ядром,
+                      с несколькими — заливка, иначе цифра внутри не читается */}
+                  <motion.g
                     initial={{ scale: 0, opacity: 0 }}
                     animate={mapIn ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 14, delay: 0.5 + i * 0.07 }}
                     style={{ transformOrigin: `${c.x}px ${c.y}px` }}
-                  />
+                  >
+                    {c.objects.length > 1 ? (
+                      <circle cx={c.x} cy={c.y} r="8" fill="rgb(var(--a))" stroke="var(--bg)" strokeWidth="1.4" />
+                    ) : (
+                      <>
+                        <circle cx={c.x} cy={c.y} r="5.5" fill="none" stroke="rgb(var(--a))" strokeWidth="1.4" opacity="0.95" />
+                        <circle cx={c.x} cy={c.y} r="1.9" fill="rgb(var(--a))" />
+                      </>
+                    )}
+                  </motion.g>
                   {c.objects.length > 1 && (
                     <text x={c.x} y={c.y + 3.5} className="kzpin-n">
                       {c.objects.length}

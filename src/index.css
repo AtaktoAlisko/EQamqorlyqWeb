@@ -1193,13 +1193,13 @@ h1, h2, h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height
 }
 .kzpin-label {
   font-family: 'Manrope', sans-serif;
-  font-size: 13px; font-weight: 700;
-  fill: #c9d8d3; pointer-events: none;
-  paint-order: stroke;
-  stroke: rgba(2, 5, 10, 0.85);
-  stroke-width: 3.5px;
-  stroke-linejoin: round;
-  opacity: 0.85;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.07em;
+  fill: #e2ece8; pointer-events: none;
+  /* вместо жирной обводки — мягкая тень: подписи лежат на светлом
+     спутниковом снимке и без подложки в нём тонут */
+  filter: drop-shadow(0 1px 2.5px rgba(1, 5, 10, 0.95));
+  opacity: 0.9;
   transition: fill 0.25s, opacity 0.25s;
 }
 .kzpin:hover .kzpin-label, .kzpin.on .kzpin-label { fill: rgb(var(--a)); opacity: 1; }
