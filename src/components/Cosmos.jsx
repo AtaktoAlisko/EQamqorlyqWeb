@@ -118,9 +118,10 @@ function Globe({ progress, wide }) {
       const t = (now - t0) / 1000;
       const p = progress.get();
 
-      /* Карта закрыла планету — прекращаем тяжёлый пиксельный рендер сферы.
-         RAF продолжаем крутить дёшево, чтобы подхватить обратный скролл. */
-      if (p > 0.7) {
+      /* Глобус уже полностью прозрачен (opacity→0 к 0.64) — прекращаем
+         тяжёлый пиксельный рендер сферы, чтобы кроссфейд на карту шёл без
+         рывка. RAF продолжаем крутить дёшево, чтобы подхватить обратный скролл. */
+      if (p > 0.65) {
         ctx.clearRect(0, 0, w, h);
         raf = requestAnimationFrame(draw);
         return;
@@ -135,7 +136,7 @@ function Globe({ progress, wide }) {
 
       const cx = wide ? lerp(w * 0.7, w * 0.5, k) : w * 0.5;
       const cy = h * 0.5;
-      const R = Math.min(w, h) * lerp(0.3, 0.5, k) * (1 + dive * 1.9);
+      const R = Math.min(w, h) * lerp(0.3, 0.5, k) * (1 + dive * 1.55);
 
       const sinL = Math.sin(lat0 * RAD);
       const cosL = Math.cos(lat0 * RAD);
@@ -176,9 +177,14 @@ function Globe({ progress, wide }) {
          сетка на каждом кадре съедала бы кадровый бюджет. */
       if (tex) {
         // масштаб внутреннего буфера: на слабых экранах (мало ядер / телефон)
-        // считаем грубее, чтобы держать 60fps; растяжение сгладит
+        // считаем грубее, чтобы держать 60fps; растяжение сгладит.
+        // Жёсткий потолок радиуса буфера — ключ к плавности: во время «нырка»
+        // экранный R раздувается в ~2.5 раза, и без cap стоимость кадра росла
+        // бы как R² именно в момент кроссфейда на карту → рывок. Потолок держит
+        // бюджет постоянным, а бикубическое растяжение drawImage сглаживает.
         const q = w < 760 ? 0.4 : lowCore ? 0.42 : 0.5;
-        const Rb = Math.max(2, Math.round(R * q));
+        const RB_MAX = w < 760 ? 175 : lowCore ? 200 : 300;
+        const Rb = Math.max(2, Math.min(RB_MAX, Math.round(R * q)));
         const size = Rb * 2;
         if (!buf || buf.width !== size) {
           buf = document.createElement('canvas');
@@ -212,11 +218,32 @@ function Globe({ progress, wide }) {
               lon0 * RAD +
               Math.atan2(xN * sinc, rho * cosc * cosL - yN * sinc * sinL);
 
-            // текстура: равнопромежуточная развёртка
-            let u = ((lon / RAD + 180) % 360 + 360) % 360;
-            const tx = (u / 360) * tex.w | 0;
-            const ty = ((90 - lat / RAD) / 180) * tex.h | 0;
-            const ti = (Math.min(tex.h - 1, ty) * tex.w + Math.min(tex.w - 1, tx)) * 4;
+            // текстура: равнопромежуточная развёртка с билинейной выборкой —
+            // цвет усредняется между 4 соседними тексели, поэтому при «нырке»
+            // и увеличении не видно квадратных пикселей, а плавный переход.
+            const u = ((lon / RAD + 180) % 360 + 360) % 360;
+            const fx = (u / 360) * tex.w - 0.5;
+            const fy = ((90 - lat / RAD) / 180) * tex.h - 0.5;
+            const x0 = Math.floor(fx);
+            const y0 = Math.floor(fy);
+            const gx = fx - x0;
+            const gy = fy - y0;
+            // долгота заворачивается по кругу, широта прижимается к полюсам
+            const xa = ((x0 % tex.w) + tex.w) % tex.w;
+            const xb = (xa + 1) % tex.w;
+            const ya = y0 < 0 ? 0 : y0 >= tex.h ? tex.h - 1 : y0;
+            const yb = y0 + 1 < 0 ? 0 : y0 + 1 >= tex.h ? tex.h - 1 : y0 + 1;
+            const rowA = ya * tex.w;
+            const rowB = yb * tex.w;
+            const iAA = (rowA + xa) * 4;
+            const iBA = (rowA + xb) * 4;
+            const iAB = (rowB + xa) * 4;
+            const iBB = (rowB + xb) * 4;
+            const wAA = (1 - gx) * (1 - gy);
+            const wBA = gx * (1 - gy);
+            const wAB = (1 - gx) * gy;
+            const wBB = gx * gy;
+            const td = tex.data;
 
             // диффузное освещение + мягкий край терминатора
             let li = xN * LX + yN * LY + zN * LZ;
@@ -224,10 +251,11 @@ function Globe({ progress, wide }) {
             const shade = 0.05 + 0.95 * Math.pow(li, 0.75);
             // атмосферное поджатие к лимбу
             const edge = 0.55 + 0.45 * zN;
+            const sh = shade * edge;
 
-            out[i4] = tex.data[ti] * shade * edge;
-            out[i4 + 1] = tex.data[ti + 1] * shade * edge;
-            out[i4 + 2] = tex.data[ti + 2] * shade * edge * 1.06;
+            out[i4] = (td[iAA] * wAA + td[iBA] * wBA + td[iAB] * wAB + td[iBB] * wBB) * sh;
+            out[i4 + 1] = (td[iAA + 1] * wAA + td[iBA + 1] * wBA + td[iAB + 1] * wAB + td[iBB + 1] * wBB) * sh;
+            out[i4 + 2] = (td[iAA + 2] * wAA + td[iBA + 2] * wBA + td[iAB + 2] * wAB + td[iBB + 2] * wBB) * sh * 1.06;
             out[i4 + 3] = 255;
           }
         }
