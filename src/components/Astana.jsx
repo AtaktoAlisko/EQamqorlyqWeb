@@ -3,6 +3,7 @@ import { motion, useInView, useScroll, useSpring, useTransform } from 'framer-mo
 import FeastReveal from './FeastReveal';
 import { Counter } from './fx';
 import { useLang } from '../i18n';
+import { KZ_PINS, TOTAL_OBJECTS } from '../data/kz';
 
 /* ============================================================
    Провал в Астану → накрытый стол.
@@ -50,6 +51,9 @@ export default function Astana() {
   const fallVis = useTransform(p, (v) => (v > 0.26 ? 'hidden' : 'visible'));
   const cityScale = useTransform(p, [0, 0.24], [1, 9]);
   const cityOpacity = useTransform(p, [0, 0.14, 0.22], [0.9, 0.5, 0]);
+  /* фото гаснет раньше огней: на сильном зуме апскейл был бы заметен, дальше падение
+     держат только огни и полосы скорости */
+  const cityPhotoOpacity = useTransform(p, [0, 0.07, 0.16], [1, 0.82, 0]);
 
   /* --- фаза 2: круг раскрывается на стол --- */
   const holeR = useTransform(p, [0.05, 0.26], [0, 135]);
@@ -65,6 +69,10 @@ export default function Astana() {
       <div className="astana-sticky">
         {/* ---------- падение сквозь город ---------- */}
         <motion.div className="fall" style={{ opacity: fallOpacity, visibility: fallVis }}>
+          {/* реальная Астана с высоты — камера падает прямо в неё */}
+          <motion.div className="city-photo" style={{ scale: cityScale, opacity: cityPhotoOpacity }} />
+          <span className="city-shade" />
+
           <motion.div className="city" style={{ scale: cityScale, opacity: cityOpacity }}>
             {Array.from({ length: 46 }).map((_, i) => {
               const a = (i * 137.5 * Math.PI) / 180;
@@ -109,9 +117,9 @@ export default function Astana() {
           {/* пар над горячими блюдами — привязан к тарелкам с мясом */}
           <motion.div className="feast-steam" style={{ opacity: warmth }}>
             {[
-              { x: '80%', y: '20%', s: 1 },
-              { x: '78%', y: '48%', s: 1.15 },
-              { x: '12%', y: '78%', s: 0.9 },
+              { x: '69%', y: '16%', s: 1 }, // манты
+              { x: '71%', y: '49%', s: 1.15 }, // бешбармак
+              { x: '29%', y: '49%', s: 0.9 }, // плов
             ].map((pl, i) => (
               <span key={i} className="plume" style={{ left: pl.x, top: pl.y, transform: `scale(${pl.s})` }}>
                 {[0, 1, 2].map((k) => (
@@ -162,9 +170,9 @@ export default function Astana() {
             </h2>
             <div className="feast-stats">
               {[
-                { v: 6000, s: '+', l: t.astana.stats[0].l },
-                { v: 20, s: '', l: t.astana.stats[1].l },
-                { v: 14, s: '', l: t.astana.stats[2].l },
+                { v: 10000, s: '+', l: t.astana.stats[0].l },
+                { v: TOTAL_OBJECTS, s: '', l: t.astana.stats[1].l },
+                { v: KZ_PINS.length, s: '', l: t.astana.stats[2].l },
               ].map((x) => (
                 <div className="feast-stat" key={x.l}>
                   <div className="v grad">

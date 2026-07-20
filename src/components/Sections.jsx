@@ -277,6 +277,175 @@ export function News() {
   );
 }
 
+/* ================= PLATFORM (E-Qamqorlyq) ================= */
+export function Platform() {
+  const { t } = useLang();
+  const s = t.platform;
+  return (
+    <section className="section" id="platform">
+      <div className="wrap z">
+        <div className="sec-head center">
+          <Reveal>
+            <span className="eyebrow">
+              <span className="dot" /> {s.eyebrow}
+            </span>
+            <h2 className="h2">
+              {s.head[0]} <span className="grad">{s.head[1]}</span>
+            </h2>
+            <p className="lead">{s.lead}</p>
+          </Reveal>
+        </div>
+
+        <div className="cards-3">
+          {s.modules.map((m, i) => (
+            <Reveal key={m.code} delay={i * 0.06}>
+              <TiltCard className="f-card mod-card glass" max={10}>
+                <div className="mod-top">
+                  <span className="f-icon">{m.icon}</span>
+                  <span className="mod-code">{m.code}</span>
+                </div>
+                <h3>{m.title}</h3>
+                <ul className="mod-list">
+                  {m.points.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
+                <div className="mod-effect">
+                  <span className="k">{s.effectLabel}</span>
+                  <span className="v">{m.effect}</span>
+                </div>
+              </TiltCard>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.1}>
+          <div className="haccp glass">
+            <div className="haccp-head">
+              <div>
+                <h3>{s.haccpTitle}</h3>
+                <p className="lead" style={{ fontSize: 14.5, marginTop: 10 }}>
+                  {s.haccpText}
+                </p>
+              </div>
+              <span className="patent">🏅 {s.patent}</span>
+            </div>
+            <div className="sensors">
+              {s.sensors.map((sn) => (
+                <div className="sensor" key={sn.t}>
+                  <span className="ic">{sn.icon}</span>
+                  <div>
+                    <div className="t">{sn.t}</div>
+                    <div className="s">{sn.s}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ================= RESULTS ================= */
+export function Results() {
+  const { t } = useLang();
+  const s = t.results;
+  return (
+    <section className="section" id="results" style={{ paddingTop: 0 }}>
+      <div className="wrap z">
+        <div className="sec-head center">
+          <Reveal>
+            <span className="eyebrow">
+              <span className="dot" /> {s.eyebrow}
+            </span>
+            <h2 className="h2">
+              {s.head[0]} <span className="grad">{s.head[1]}</span>
+            </h2>
+            <p className="lead">{s.lead}</p>
+          </Reveal>
+        </div>
+
+        <div className="res-grid">
+          {s.items.map((r, i) => (
+            <Reveal key={r.title} delay={i * 0.07}>
+              <div className="res-card glass">
+                <div className="res-title">{r.title}</div>
+                {r.from ? (
+                  <div className="res-shift">
+                    <span className="from">
+                      <span className="lbl">{s.beforeLabel}</span>
+                      {r.from}
+                    </span>
+                    <span className={`arrow ${r.dir}`}>{r.dir === 'up' ? '↗' : '↘'}</span>
+                    <span className="to grad">
+                      <span className="lbl">{s.afterLabel}</span>
+                      {r.to}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="res-single grad">{r.value}</div>
+                )}
+                <p>{r.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================= ESG ================= */
+export function Esg() {
+  const { t } = useLang();
+  const s = t.esg;
+  return (
+    <section className="section" id="esg">
+      <div className="wrap z">
+        <div className="sec-head center">
+          <Reveal>
+            <span className="eyebrow">
+              <span className="dot" /> {s.eyebrow}
+            </span>
+            <h2 className="h2">
+              {s.head[0]} <span className="grad">{s.head[1]}</span>
+            </h2>
+            <p className="lead">{s.lead}</p>
+          </Reveal>
+        </div>
+
+        <div className="esg-grid">
+          {s.crisis.map((c, i) => (
+            <Reveal key={c.title} delay={i * 0.1}>
+              <div className="esg-card glass">
+                <div className="esg-v grad">{c.value}</div>
+                <div className="esg-u">{c.unit}</div>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.15}>
+          <h3 className="esg-sub">{s.systemicTitle}</h3>
+          <div className="esg-sys">
+            {s.systemic.map((it) => (
+              <TiltCard key={it.t} className="f-card glass" max={10}>
+                <div className="f-icon">{it.i}</div>
+                <h3 style={{ fontSize: 16 }}>{it.t}</h3>
+                <p style={{ fontSize: 13.5 }}>{it.s}</p>
+              </TiltCard>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ================= ADVANTAGES + eQAMQORLYQ ================= */
 function Skill({ s, i }) {
   const ref = useRef(null);
@@ -307,6 +476,19 @@ export function Advantages() {
   return (
     <section className="section" id="advantages">
       <div className="wrap z">
+        <div className="cards-3" style={{ marginBottom: 'clamp(48px, 7vw, 84px)' }}>
+          {s.reasons.map((r, i) => (
+            <Reveal key={r.title} delay={i * 0.06}>
+              <TiltCard className="f-card reason-card glass" max={10}>
+                <span className="f-num">0{i + 1}</span>
+                <h3>{r.title}</h3>
+                <p>{r.text}</p>
+                <span className="reason-tag">{r.tag}</span>
+              </TiltCard>
+            </Reveal>
+          ))}
+        </div>
+
         <div className="adv-grid">
           <Reveal>
             <span className="eyebrow">
@@ -442,8 +624,8 @@ export function Contact() {
                 {s.ctaLead}
               </p>
               <Magnetic>
-                <a href="tel:+77473432342" className="btn btn-primary">
-                  +7 747 34 32 342 <span className="arw">→</span>
+                <a href="tel:+77077500870" className="btn btn-primary">
+                  +7 707 750 08 70 <span className="arw">→</span>
                 </a>
               </Magnetic>
             </div>
@@ -544,6 +726,7 @@ export function Footer() {
             <p className="lead" style={{ fontSize: 14, maxWidth: 340, marginTop: 16 }}>
               {s.tagline}
             </p>
+            <p className="footer-motto grad">{s.motto}</p>
           </div>
 
           <div>
@@ -577,7 +760,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} {s.rights}</span>
-          <span>info@opensoulinc.kz · +7 747 34 32 342</span>
+          <span>info@opensoul.kz · +7 707 750 08 70 · +7 771 505 80 00</span>
         </div>
       </div>
     </footer>

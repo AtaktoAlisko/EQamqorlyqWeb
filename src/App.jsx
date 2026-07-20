@@ -12,9 +12,12 @@ import {
   About,
   Advantages,
   Contact,
+  Esg,
   Features,
   Footer,
   News,
+  Platform,
+  Results,
   Stats,
   Testimonials,
   Timeline,
@@ -49,9 +52,12 @@ export default function App() {
           <Journey />
           <Features />
           <Stats />
+          <Platform />
+          <Results />
           <About />
           <Timeline />
           <Trust />
+          <Esg />
           <News />
           <Advantages />
           <Testimonials />

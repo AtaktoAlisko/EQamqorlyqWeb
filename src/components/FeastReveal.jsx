@@ -13,21 +13,32 @@ import { motion, useTransform } from 'framer-motion';
 const W = 1000;
 const H = 634;
 
-/* центры тарелок (в координатах viewBox) и порог их появления */
+/* Центры блюд (в координатах viewBox) и порог их появления.
+   Координаты сняты с public/food.jpg: центр блюда в пикселях фото
+   пересчитан как v = px * (634/1632) - 9.7 — множитель это масштаб
+   «slice» по высоте, вычет — боковой срез, потому что фото шире viewBox.
+   При замене фотографии пересчитывать заново, иначе круги будут
+   проявлять пустое дерево вместо тарелок. */
 const PLATES = [
-  { x: 800, y: 115, r: 175, at: 0.04 }, // правый верх — мясо
-  { x: 330, y: 95, r: 165, at: 0.09 }, // центр-верх — мясо
-  { x: 180, y: 130, r: 160, at: 0.14 }, // левый верх — салат
-  { x: 780, y: 300, r: 185, at: 0.19 }, // правый центр — мясо с картофелем (герой)
-  { x: 430, y: 235, r: 165, at: 0.24 }, // центр — корзина с хлебом
-  { x: 545, y: 95, r: 160, at: 0.29 }, // центр-верх — салат
-  { x: 110, y: 320, r: 165, at: 0.34 }, // левый центр — салат
-  { x: 960, y: 300, r: 165, at: 0.38 }, // дальний правый — мясо
-  { x: 440, y: 370, r: 150, at: 0.42 }, // центр — графин
-  { x: 125, y: 490, r: 165, at: 0.46 }, // низ слева — мясо
-  { x: 410, y: 525, r: 160, at: 0.5 }, // низ центр — салат
-  { x: 570, y: 525, r: 160, at: 0.54 }, // низ центр — салат
-  { x: 885, y: 525, r: 170, at: 0.58 }, // низ справа — хлеб
+  // сначала два главных блюда — они держат кадр
+  { x: 714, y: 311, r: 150, at: 0.04 }, // бешбармак (герой)
+  { x: 291, y: 311, r: 145, at: 0.08 }, // плов
+  { x: 500, y: 199, r: 185, at: 0.12 }, // корзина с лепёшкой
+  // верхний ряд
+  { x: 126, y: 102, r: 160, at: 0.16 }, // казы
+  { x: 337, y: 97, r: 150, at: 0.2 }, // баурсаки
+  { x: 689, y: 99, r: 150, at: 0.24 }, // манты
+  { x: 903, y: 107, r: 155, at: 0.27 }, // салат
+  // средний ряд
+  { x: 105, y: 316, r: 150, at: 0.31 }, // сорпа
+  { x: 936, y: 326, r: 150, at: 0.35 }, // сметана
+  { x: 485, y: 357, r: 130, at: 0.38 }, // графин
+  // нижний ряд
+  { x: 105, y: 515, r: 160, at: 0.42 }, // шашлык
+  { x: 332, y: 520, r: 155, at: 0.46 }, // самса
+  { x: 526, y: 510, r: 140, at: 0.5 }, // чайник
+  { x: 704, y: 515, r: 150, at: 0.54 }, // казы с гранатом
+  { x: 920, y: 520, r: 155, at: 0.58 }, // соленья
 ];
 
 function RevealCircle({ plate, p }) {
@@ -39,11 +50,26 @@ export default function FeastReveal({ p }) {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="feast-svg" preserveAspectRatio="xMidYMid slice">
       <defs>
+        {/* растушёвка краёв: круги растворяются друг в друге вместо жёстких «дырок» */}
+        <filter id="feather" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="34" />
+        </filter>
+        {/* «пустой» стол — обесцвеченный и приглушённый, а не залитый чёрным */}
+        <filter id="cold">
+          <feColorMatrix type="saturate" values="0.12" />
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="0.42" />
+            <feFuncG type="linear" slope="0.44" />
+            <feFuncB type="linear" slope="0.52" />
+          </feComponentTransfer>
+        </filter>
         <mask id="serve">
           <rect width={W} height={H} fill="#000" />
-          {PLATES.map((pl, i) => (
-            <RevealCircle key={i} plate={pl} p={p} />
-          ))}
+          <g filter="url(#feather)">
+            {PLATES.map((pl, i) => (
+              <RevealCircle key={i} plate={pl} p={p} />
+            ))}
+          </g>
         </mask>
         {/* тёплый свет сверху и виньетка */}
         <radialGradient id="rvlight" cx="0.5" cy="0.42" r="0.6">
@@ -56,16 +82,18 @@ export default function FeastReveal({ p }) {
         </radialGradient>
       </defs>
 
-      {/* «пустой» тёмный стол — та же фотография, сильно затемнённая */}
-      <image
-        href="/food.jpg"
-        x="0"
-        y="0"
-        width={W}
-        height={H}
-        preserveAspectRatio="xMidYMid slice"
-      />
-      <rect width={W} height={H} fill="#05070c" opacity="0.82" />
+      {/* «пустой» стол — та же фотография, обесцвеченная и притушенная */}
+      <g filter="url(#cold)">
+        <image
+          href="/food.jpg"
+          x="0"
+          y="0"
+          width={W}
+          height={H}
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </g>
+      <rect width={W} height={H} fill="#05070c" opacity="0.34" />
 
       {/* яркое фото проявляется сквозь растущие круги-тарелки */}
       <g mask="url(#serve)">

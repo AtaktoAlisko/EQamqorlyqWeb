@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Исходники изображений и рабочие документы — в сборку не идут
+assets/
+Gemini_Generated_Image_*.png
+/astana.jpg
+*.pdf

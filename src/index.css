@@ -898,6 +898,121 @@ h1, h2, h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height
   padding-top: 24px; border-top: 1px solid var(--hairline);
   font-size: 12.5px; color: var(--text-mute);
 }
+.footer-motto {
+  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-size: 13.5px; margin-top: 18px; letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   PLATFORM — модули E-Qamqorlyq и цифровой ХАССП
+   ============================================================ */
+.mod-card { display: flex; flex-direction: column; }
+.mod-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.mod-code {
+  font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 700;
+  padding: 5px 11px; border-radius: 100px;
+  color: var(--accent); background: rgba(var(--a), 0.1);
+  border: 1px solid rgba(var(--a), 0.28); white-space: nowrap;
+}
+.mod-list { list-style: none; margin: 4px 0 16px; display: flex; flex-direction: column; gap: 7px; }
+.mod-list li {
+  position: relative; padding-left: 17px;
+  font-size: 13.5px; color: var(--text-dim); line-height: 1.6;
+}
+.mod-list li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: rgba(var(--a), 0.55);
+}
+.mod-effect {
+  margin-top: auto; padding-top: 14px; border-top: 1px solid var(--hairline);
+}
+.mod-effect .k {
+  display: block; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-mute); font-weight: 700; margin-bottom: 5px;
+}
+.mod-effect .v { font-size: 13px; color: var(--text); line-height: 1.55; }
+
+.haccp { margin-top: clamp(20px, 3vw, 30px); padding: clamp(24px, 3.4vw, 38px); }
+.haccp-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 20px; flex-wrap: wrap; margin-bottom: 26px;
+}
+.haccp-head h3 { font-size: clamp(18px, 2.4vw, 22px); }
+.haccp-head .lead { max-width: 620px; }
+.patent {
+  flex-shrink: 0; font-size: 12.5px; font-weight: 700; white-space: nowrap;
+  padding: 9px 15px; border-radius: 100px;
+  color: var(--accent); background: rgba(var(--a), 0.1);
+  border: 1px solid rgba(var(--a), 0.3);
+}
+.sensors { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.8vw, 18px); }
+.sensor {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 16px; border-radius: 16px;
+  background: var(--glass-2); border: 1px solid var(--hairline);
+}
+.sensor .ic { font-size: 20px; line-height: 1; }
+.sensor .t { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.sensor .s { font-size: 12.5px; color: var(--text-dim); line-height: 1.55; }
+@media (max-width: 900px) { .sensors { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .sensors { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   RESULTS — эффект внедрения в цифрах
+   ============================================================ */
+.res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 22px); }
+@media (max-width: 950px) { .res-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .res-grid { grid-template-columns: 1fr; } }
+.res-card { padding: clamp(22px, 3vw, 30px); height: 100%; transition: transform 0.5s var(--ease); }
+.res-card:hover { transform: translateY(-6px); border-color: rgba(var(--a), 0.35); }
+.res-title {
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-mute); font-weight: 700; margin-bottom: 14px;
+}
+.res-shift { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.res-shift .lbl {
+  display: block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-mute); font-weight: 700; margin-bottom: 2px;
+}
+.res-shift .from {
+  font-family: 'Unbounded', sans-serif; font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700; color: var(--text-mute); text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.res-shift .to { font-family: 'Unbounded', sans-serif; font-size: clamp(28px, 4.6vw, 40px); font-weight: 900; }
+.res-shift .arrow { font-size: 20px; color: var(--accent); }
+.res-single { font-family: 'Unbounded', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 900; line-height: 1; }
+.res-card p { margin-top: 14px; font-size: 13.5px; color: var(--text-dim); line-height: 1.65; }
+
+/* ============================================================
+   ESG — кризисная помощь и системная работа
+   ============================================================ */
+.esg-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 2vw, 22px); margin-bottom: clamp(36px, 5vw, 56px);
+}
+@media (max-width: 760px) { .esg-grid { grid-template-columns: 1fr; } }
+.esg-card { padding: clamp(26px, 3.6vw, 40px); }
+.esg-v { font-family: 'Unbounded', sans-serif; font-size: clamp(38px, 7vw, 64px); font-weight: 900; line-height: 1; }
+.esg-u { font-size: 13px; color: var(--text-mute); font-weight: 700; margin-top: 6px; }
+.esg-card h3 { font-size: clamp(17px, 2.2vw, 20px); margin: 18px 0 10px; }
+.esg-card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
+.esg-sub {
+  font-size: clamp(17px, 2.2vw, 20px);
+  margin-bottom: clamp(18px, 2.6vw, 26px); text-align: center;
+}
+.esg-sys { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 22px); }
+@media (max-width: 950px) { .esg-sys { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .esg-sys { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   ADVANTAGES — шесть причин
+   ============================================================ */
+.reason-card { display: flex; flex-direction: column; }
+.reason-tag {
+  align-self: flex-start; margin-top: auto; padding-top: 16px;
+  font-size: 12px; font-weight: 700; color: var(--accent);
+}
 
 /* ============================================================
    INTRO / PRELOADER
@@ -1003,6 +1118,9 @@ h1, h2, h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height
   margin: clamp(18px, 3vw, 26px) 0 20px;
   color: #fff;
   text-shadow: 0 10px 50px rgba(0, 0, 0, 0.75);
+  /* длинное слово переносится по слогам, а не наезжает на глобус */
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 .cosmos-copy .lead {
   font-size: clamp(15px, 1.8vw, 18px);
@@ -1139,7 +1257,51 @@ h1, h2, h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height
   display: grid; place-items: center;
   background: radial-gradient(ellipse at 50% 50%, #0a1424 0%, #04070f 60%, #01030a 100%);
 }
-.city { position: absolute; inset: 0; will-change: transform; }
+/* реальный снимок Астаны с высоты — фон падения */
+/* Варианты собираются скриптом scripts/gen-astana.sh из assets/astana-master.jpg.
+   Размер переключается медиа-запросом (по ширине вьюпорта), формат — image-set().
+   Дескрипторы 1x/2x здесь НЕ годятся: они смотрят на DPR, а у телефонов он 3,
+   и мобильный браузер утащил бы именно тяжёлую десктопную версию. */
+.city-photo {
+  position: absolute; inset: 0; z-index: 0;
+  background-position: center 46%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/astana-1280.jpg'); /* фолбэк для браузеров без image-set() */
+  background-image: image-set(
+    url('/astana-1280.avif') type('image/avif'),
+    url('/astana-1280.webp') type('image/webp'),
+    url('/astana-1280.jpg')  type('image/jpeg')
+  );
+  will-change: transform;
+  filter: saturate(1.14) contrast(1.06);
+}
+
+@media (min-width: 951px) {
+  .city-photo {
+    background-image: url('/astana-2560.jpg');
+    background-image: image-set(
+      url('/astana-2560.avif') type('image/avif'),
+      url('/astana-2560.webp') type('image/webp'),
+      url('/astana-2560.jpg')  type('image/jpeg')
+    );
+  }
+}
+/* затемнение поверх фото: город остаётся виден, но текст читается */
+.city-shade {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(3, 6, 13, 0.1) 0%, rgba(3, 6, 13, 0.42) 52%, rgba(1, 3, 10, 0.8) 100%),
+    linear-gradient(180deg, rgba(1, 3, 10, 0.52) 0%, transparent 26%, transparent 70%, rgba(1, 3, 10, 0.78) 100%);
+}
+/* тень под заголовком вместо общего затемнения кадра */
+.fall-copy::before {
+  content: ''; position: absolute; left: 50%; top: 50%; z-index: -1;
+  width: 150%; height: 260%; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(1, 3, 10, 0.78) 0%, rgba(1, 3, 10, 0.42) 45%, transparent 72%);
+  pointer-events: none;
+}
+.city { position: absolute; inset: 0; z-index: 2; will-change: transform; }
 .light {
   position: absolute;
   width: 4px; height: 4px; border-radius: 50%;
@@ -1161,25 +1323,50 @@ h1, h2, h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height
   100% { transform: translateY(300%); opacity: 0; }
 }
 
-.fall-copy { position: relative; z-index: 3; text-align: center; }
+.fall-copy { position: relative; z-index: 3; text-align: center; padding: 0 14px; }
 .fall-city {
   font-family: 'Unbounded', sans-serif; font-weight: 900;
-  font-size: clamp(38px, 9vw, 110px);
+  font-size: clamp(42px, 11.5vw, 150px);
+  line-height: 0.95;
   color: #fff;
-  text-shadow: 0 12px 60px rgba(0, 0, 0, 0.9);
+  /* трекинг вешает пустой отступ справа от последней буквы — компенсируем,
+     иначе слово стоит левее координат под ним */
+  text-indent: 0.25em;
+  /* тень фильтром, а не text-shadow: ниже заливка становится прозрачной
+     под градиент, и text-shadow бы рисовался по силуэту буквы насквозь */
+  filter:
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 18px 70px rgba(0, 0, 0, 0.85));
+}
+/* лёгкий градиент к низу букв — объём вместо плоской заливки */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .fall-city {
+    background: linear-gradient(180deg, #fff 0%, #fff 54%, #cfe6dd 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 .fall-coords {
-  margin-top: 14px;
+  margin-top: 22px;
   font-family: 'Unbounded', sans-serif;
   font-size: clamp(11px, 2vw, 14px); font-weight: 700;
   letter-spacing: 0.2em;
   color: rgb(var(--a));
 }
+/* акцентная черта между городом и координатами */
+.fall-coords::before {
+  content: ''; display: block;
+  width: 56px; height: 2px; margin: 0 auto 18px;
+  background: linear-gradient(90deg, transparent, rgb(var(--a)), transparent);
+  opacity: 0.85;
+}
 .fall-sub {
   margin-top: 10px;
   font-size: clamp(11px, 2vw, 13px);
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: #7f918c;
+  /* белый + тень: строка ложится на фото города, серый на нём не читался */
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(1, 3, 10, 0.9), 0 0 3px rgba(1, 3, 10, 0.7);
 }
 
 /* --- фаза 2–3: стол --- */
