@@ -213,12 +213,12 @@ const ru = {
     head: ['Что', 'происходит'],
     lead: 'Проекты, внедрения и события компании — коротко о главном.',
     items: [
-      { emoji: '🍲', tag: 'Новости', date: '24 Дек 2025', title: 'По-домашнему: горячее питание для солдат', text: 'В борьбе с паводком важно участие каждого. Пока военнослужащие и оперативные службы задействованы в ликвидации стихии, мы обеспечиваем их горячей провизией.' },
+      { emoji: '🍲', img: '/news-1.jpg', tag: 'Новости', date: '24 Дек 2025', title: 'По-домашнему: горячее питание для солдат', text: 'В борьбе с паводком важно участие каждого. Пока военнослужащие и оперативные службы задействованы в ликвидации стихии, мы обеспечиваем их горячей провизией.' },
       { emoji: '📱', img: '/news-2.jpg', tag: 'Технологии', date: '01 Окт 2024', title: 'Внедрена система eQamqorlyq', text: 'В 8 объектах внедрена инновационная система eQamqorlyq для улучшения качества обслуживания и поддержки здоровья клиентов.' },
       { emoji: '🔬', img: '/news-3.jpg', tag: 'Проекты', date: '24 Дек 2025', title: 'Пилотный проект ХАССП в Национальном госпитале', text: 'В Национальном госпитале МЦ УДП РК запущен пилотный проект по внедрению комплекса e-Qamqorlyq — электронной системы ХАССП.' },
       { emoji: '🍱', img: '/news-4.jpg', tag: 'Новости', date: '28 Фев 2023', title: 'Введена система ланч-боксов', text: 'В этом учебном году в Алматы почти на 40% увеличился охват школьников бесплатным питанием — сейчас его получают около 133 тысяч детей.' },
-      { emoji: '🤝', tag: 'События', date: '16 Апр 2025', title: 'Деловой визит и профессиональный обмен', text: 'Поездка в Екатеринбург: обмен опытом с международными специалистами в сфере организации лечебно-диетического питания.' },
-      { emoji: '🎒', tag: 'СМИ', date: '28 Фев 2023', title: 'Что едят школьники Алматы?', text: 'Бесплатное горячее питание в металлических ланч-боксах организовали в четырёх школах Алматы. Пилотный проект запустили за счёт местного бюджета.' },
+      { emoji: '🤝', img: '/news-5.jpg', tag: 'События', date: '16 Апр 2025', title: 'Деловой визит и профессиональный обмен', text: 'Поездка в Екатеринбург: обмен опытом с международными специалистами в сфере организации лечебно-диетического питания.' },
+      { emoji: '🎒', img: '/news-6.jpg', tag: 'СМИ', date: '28 Фев 2023', title: 'Что едят школьники Алматы?', text: 'Бесплатное горячее питание в металлических ланч-боксах организовали в четырёх школах Алматы. Пилотный проект запустили за счёт местного бюджета.' },
     ],
   },
   platform: {
@@ -590,12 +590,12 @@ const kz = {
     head: ['Не', 'болып жатыр'],
     lead: 'Компанияның жобалары, енгізулері мен оқиғалары — ең бастысы туралы қысқаша.',
     items: [
-      { emoji: '🍲', tag: 'Жаңалықтар', date: '24 Жел 2025', title: 'Үй жылуымен: сарбаздарға ыстық тамақ', text: 'Су тасқынымен күресте әркімнің қатысуы маңызды. Әскерилер апатты жоюда жүргенде, біз оларды ыстық азықпен қамтамасыз етеміз.' },
+      { emoji: '🍲', img: '/news-1.jpg', tag: 'Жаңалықтар', date: '24 Жел 2025', title: 'Үй жылуымен: сарбаздарға ыстық тамақ', text: 'Су тасқынымен күресте әркімнің қатысуы маңызды. Әскерилер апатты жоюда жүргенде, біз оларды ыстық азықпен қамтамасыз етеміз.' },
       { emoji: '📱', img: '/news-2.jpg', tag: 'Технологиялар', date: '01 Қаз 2024', title: 'eQamqorlyq жүйесі енгізілді', text: 'Қызмет сапасын арттыру үшін 8 нысанда инновациялық eQamqorlyq жүйесі енгізілді.' },
       { emoji: '🔬', img: '/news-3.jpg', tag: 'Жобалар', date: '24 Жел 2025', title: 'Ұлттық госпитальдегі ХАССП пилоты', text: 'ҚР ПІБ МО Ұлттық госпиталінде электрондық ХАССП жүйесі — e-Qamqorlyq кешенін енгізу бойынша пилоттық жоба басталды.' },
       { emoji: '🍱', img: '/news-4.jpg', tag: 'Жаңалықтар', date: '28 Ақп 2023', title: 'Ланч-бокс жүйесі енгізілді', text: 'Осы оқу жылында Алматыда оқушыларды тегін тамақпен қамту 40%-ға дерлік өсті — қазір оны 133 мыңға жуық бала алады.' },
-      { emoji: '🤝', tag: 'Оқиғалар', date: '16 Сәу 2025', title: 'Іскерлік сапар және кәсіби алмасу', text: 'Екатеринбургке сапар: емдік-диеталық тамақтану саласындағы халықаралық мамандармен тәжірибе алмасу.' },
-      { emoji: '🎒', tag: 'БАҚ', date: '28 Ақп 2023', title: 'Алматы оқушылары не жейді?', text: 'Алматының төрт мектебінде металл ланч-бокстарда тегін ыстық тамақ ұйымдастырылды. Пилоттық жоба жергілікті бюджет есебінен басталды.' },
+      { emoji: '🤝', img: '/news-5.jpg', tag: 'Оқиғалар', date: '16 Сәу 2025', title: 'Іскерлік сапар және кәсіби алмасу', text: 'Екатеринбургке сапар: емдік-диеталық тамақтану саласындағы халықаралық мамандармен тәжірибе алмасу.' },
+      { emoji: '🎒', img: '/news-6.jpg', tag: 'БАҚ', date: '28 Ақп 2023', title: 'Алматы оқушылары не жейді?', text: 'Алматының төрт мектебінде металл ланч-бокстарда тегін ыстық тамақ ұйымдастырылды. Пилоттық жоба жергілікті бюджет есебінен басталды.' },
     ],
   },
   platform: {
@@ -967,12 +967,12 @@ const en = {
     head: ['What is', 'happening'],
     lead: 'Projects, deployments and company events — the essentials, briefly.',
     items: [
-      { emoji: '🍲', tag: 'News', date: 'Dec 24, 2025', title: 'Homestyle: hot meals for soldiers', text: 'In fighting the flood everyone’s effort matters. While servicemen respond to the disaster, we supply them with hot provisions.' },
+      { emoji: '🍲', img: '/news-1.jpg', tag: 'News', date: 'Dec 24, 2025', title: 'Homestyle: hot meals for soldiers', text: 'In fighting the flood everyone’s effort matters. While servicemen respond to the disaster, we supply them with hot provisions.' },
       { emoji: '📱', img: '/news-2.jpg', tag: 'Technology', date: 'Oct 01, 2024', title: 'eQamqorlyq system deployed', text: 'The innovative eQamqorlyq system was deployed at 8 facilities to improve service quality and support health.' },
       { emoji: '🔬', img: '/news-3.jpg', tag: 'Projects', date: 'Dec 24, 2025', title: 'HACCP pilot at the National Hospital', text: 'A pilot project to deploy the e-Qamqorlyq suite — an electronic HACCP system — launched at the National Hospital.' },
       { emoji: '🍱', img: '/news-4.jpg', tag: 'News', date: 'Feb 28, 2023', title: 'Lunch-box system introduced', text: 'This school year free meal coverage in Almaty grew by nearly 40% — about 133,000 children now receive it.' },
-      { emoji: '🤝', tag: 'Events', date: 'Apr 16, 2025', title: 'Business visit and professional exchange', text: 'A trip to Yekaterinburg: sharing experience with international specialists in therapeutic catering.' },
-      { emoji: '🎒', tag: 'Media', date: 'Feb 28, 2023', title: 'What do Almaty schoolchildren eat?', text: 'Free hot meals in metal lunch boxes were organized in four Almaty schools. The pilot was launched with local budget funds.' },
+      { emoji: '🤝', img: '/news-5.jpg', tag: 'Events', date: 'Apr 16, 2025', title: 'Business visit and professional exchange', text: 'A trip to Yekaterinburg: sharing experience with international specialists in therapeutic catering.' },
+      { emoji: '🎒', img: '/news-6.jpg', tag: 'Media', date: 'Feb 28, 2023', title: 'What do Almaty schoolchildren eat?', text: 'Free hot meals in metal lunch boxes were organized in four Almaty schools. The pilot was launched with local budget funds.' },
     ],
   },
   platform: {
