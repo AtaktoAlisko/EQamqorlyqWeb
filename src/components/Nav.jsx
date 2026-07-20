@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import { LANGS, useLang } from '../i18n';
 import { useTheme } from '../theme';
-import { Magnetic } from './fx';
 
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
@@ -114,11 +113,6 @@ export default function Nav({ show = true }) {
             <div className="nav-cta">
               <LangSwitch />
               <ThemeToggle />
-              <Magnetic strength={0.25}>
-                <a href="#contact" className="btn btn-primary">
-                  {t.ui.contact} <span className="arw">→</span>
-                </a>
-              </Magnetic>
               <button className="burger" onClick={() => setOpen((v) => !v)} aria-label="Menu">
                 <motion.span animate={open ? { rotate: 45, y: 3.5 } : { rotate: 0, y: 0 }} />
                 <motion.span animate={open ? { rotate: -45, y: -3.5 } : { rotate: 0, y: 0 }} />
@@ -150,16 +144,6 @@ export default function Nav({ show = true }) {
                 {n.label}
               </motion.a>
             ))}
-            <motion.a
-              href="#contact"
-              className="btn btn-primary"
-              onClick={() => setOpen(false)}
-              initial={{ opacity: 0, y: 26 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05 * NAV.length, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {t.ui.contact} <span className="arw">→</span>
-            </motion.a>
             <div style={{ marginTop: 22 }}>
               <LangSwitch />
             </div>
