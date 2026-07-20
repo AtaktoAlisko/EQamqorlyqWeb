@@ -28,3 +28,4 @@ assets/
 Gemini_Generated_Image_*.png
 /astana.jpg
 *.pdf
+/[0-9].png

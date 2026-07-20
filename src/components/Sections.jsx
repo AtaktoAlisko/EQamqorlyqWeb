@@ -240,15 +240,20 @@ export function News() {
               <motion.article className="news-card glass" whileHover={{ scale: 1.015 }}>
                 <div className="news-media">
                   <span className="news-tag">{n.tag}</span>
-                  <div
-                    className="ph"
-                    style={{
-                      background:
-                        'linear-gradient(140deg, rgba(var(--a), 0.16), rgba(var(--a3), 0.06))',
-                    }}
-                  >
-                    {n.emoji}
-                  </div>
+                  {/* фото, если оно есть; иначе прежняя эмодзи-заглушка */}
+                  {n.img ? (
+                    <img className="news-img" src={n.img} alt="" loading="lazy" decoding="async" />
+                  ) : (
+                    <div
+                      className="ph"
+                      style={{
+                        background:
+                          'linear-gradient(140deg, rgba(var(--a), 0.16), rgba(var(--a3), 0.06))',
+                      }}
+                    >
+                      {n.emoji}
+                    </div>
+                  )}
                 </div>
                 <div className="news-body">
                   <div className="news-date">{n.date}</div>
