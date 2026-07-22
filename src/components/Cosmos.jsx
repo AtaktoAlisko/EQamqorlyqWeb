@@ -473,9 +473,7 @@ export default function Cosmos({ start = true }) {
                 <SplitWords text={t.cosmos.h1[0]} delay={0.25} play={start} />
                 <br />
                 <SplitWords text={t.cosmos.h1[1]} delay={0.4} play={start} />{' '}
-                <span className="grad">
-                  <SplitWords text={t.cosmos.h1[2]} delay={0.5} play={start} />
-                </span>
+                <SplitWords text={t.cosmos.h1[2]} delay={0.5} play={start} wordClass="grad" />
               </h1>
 
               <motion.p

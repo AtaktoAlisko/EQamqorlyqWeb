@@ -38,9 +38,7 @@ export default function Hero({ start = true }) {
               <SplitWords text="Лечебно-диетическое" delay={0.25} play={start} />
               <br />
               <SplitWords text="питание" delay={0.4} play={start} />{' '}
-              <span className="grad">
-                <SplitWords text="нового уровня" delay={0.5} play={start} />
-              </span>
+              <SplitWords text="нового уровня" delay={0.5} play={start} wordClass="grad" />
             </h1>
 
             <motion.p

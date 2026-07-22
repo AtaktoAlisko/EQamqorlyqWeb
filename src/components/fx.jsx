@@ -88,14 +88,18 @@ export function Reveal({ children, delay = 0, y = 30, className = '', once = tru
 }
 
 /* ---------- Word-by-word headline reveal ----------
-   `play=false` holds the words in their hidden state (used while the intro runs). */
-export function SplitWords({ text, className = '', delay = 0, play = true }) {
+   `play=false` holds the words in their hidden state (used while the intro runs).
+   `wordClass` goes on the animated span itself — a gradient (.grad) must live on
+   the moving element, otherwise WebKit drops the background-clip:text fill of a
+   parent once the child gets its own compositing layer and the word turns blank. */
+export function SplitWords({ text, className = '', wordClass = '', delay = 0, play = true }) {
   const words = text.split(' ');
   return (
     <span className={className}>
       {words.map((w, i) => (
         <span className="word" key={i}>
           <motion.span
+            className={wordClass}
             initial={{ y: '110%', opacity: 0 }}
             animate={play ? { y: '0%', opacity: 1 } : undefined}
             transition={{ duration: 0.9, delay: delay + i * 0.07, ease: [0.22, 1, 0.36, 1] }}
