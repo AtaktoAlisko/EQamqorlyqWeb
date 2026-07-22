@@ -18,7 +18,7 @@ const ru = {
     { id: 'map', label: 'География' },
     { id: 'journey', label: 'Как это работает' },
     { id: 'features', label: 'Услуги' },
-    { id: 'platform', label: 'E-Qamqorlyq' },
+    { id: 'platform', label: 'eQamqorlyq' },
     { id: 'about', label: 'О компании' },
     { id: 'news', label: 'Новости' },
     { id: 'advantages', label: 'Преимущества' },
@@ -69,7 +69,7 @@ const ru = {
     title: ['Вот ради чего', 'вся цепочка'],
     cards: [
       { t: 'Плов, 300 г', s: 'порция по техкарте' },
-      { t: '+75 °C в центре', s: 'фиксация в eQamqorlyq' },
+      { t: '+75 °C в центре', s: 'фиксация в АПК «eQamqorlyq»' },
       { t: 'От кухни до стола — 12 мин', s: 'подача точно по графику' },
       { t: 'Рацион по мед. нормам', s: 'лечебные столы 1–15' },
     ],
@@ -97,7 +97,7 @@ const ru = {
         time: '09:40',
         step: 'Приготовление',
         title: 'Кухня в работе',
-        text: 'Повара готовят по технологическим картам. Температура в центре блюда, время закладки, вес порции — всё фиксируется и уходит в eQamqorlyq.',
+        text: 'Повара готовят по технологическим картам. Температура в центре блюда, время закладки, вес порции — всё фиксируется и уходит в АПК "eQamqorlyq".',
         meta: ['Контроль +75 °C и выше', 'Техкарта на каждое блюдо'],
       },
       {
@@ -110,7 +110,7 @@ const ru = {
       {
         time: '05:00',
         step: 'Логистика',
-        title: 'Завозка продуктов',
+        title: 'Завоз продуктов',
         text: 'Проверенные поставщики, непрерывная холодовая цепь, приёмка по накладным. Продукт не попадёт на кухню без документов и проверки качества.',
         meta: ['Холодовая цепь −18 °C', 'Приёмка по накладным'],
       },
@@ -118,7 +118,7 @@ const ru = {
         time: 'Вчера',
         step: 'Старт',
         title: 'Заявка и заказ',
-        text: 'Всё начинается здесь: учреждение оставляет заявку, диетолог формирует меню на день, система рассчитывает объёмы закупки.',
+        text: 'Всё начинается здесь: учреждение направляет заявку, диетолог формирует меню на день, система рассчитывает объёмы закупки.',
         meta: ['Меню от диетолога', 'Автоматический расчёт'],
       },
     ],
@@ -161,9 +161,9 @@ const ru = {
     ],
   },
   stats: {
-    head: ['OpenSoulInc', 'в цифрах'],
+    head: ['Open Soul Inc', 'в цифрах'],
     items: [
-      { value: 29, suffix: '+', label: 'Объектов под управлением в 2026 году' },
+      { value: 30, suffix: '', label: 'Объектов под управлением в 2026 году' },
       { value: 10000, suffix: '+', label: 'Человек получают питание ежедневно' },
       { value: 400, suffix: '+', label: 'Профессионалов в команде' },
       { value: 40, suffix: '+', label: 'Реализованных проектов' },
@@ -183,7 +183,7 @@ const ru = {
   },
   timeline: {
     eyebrow: 'Путь',
-    head: ['Развитие', 'OpenSoulInc'],
+    head: ['Развитие', 'Open Soul Inc'],
     items: [
       { year: '2016', title: 'Основание компании', text: 'Обеспечение бесперебойным питанием при возведении многофункционального комплекса «Abu Dhabi» в Астане.' },
       { year: '2017', title: 'Выход на рынок', text: 'Организация питания для зимних международных соревнований «Зимняя Универсиада-2017» в городе Алматы.' },
@@ -223,7 +223,7 @@ const ru = {
   },
   platform: {
     eyebrow: 'Технологическое лидерство',
-    head: ['E-Qamqorlyq —', 'цифровая платформа'],
+    head: ['eQamqorlyq —', 'цифровая платформа'],
     lead: 'Управление питанием с интеллектуальной видеоаналитикой и ИИ. Семь модулей в фазе активного масштабирования — от терминала обратной связи до контроля себестоимости каждой порции.',
     effectLabel: 'Ключевой эффект',
     modules: [
@@ -244,7 +244,7 @@ const ru = {
       {
         code: 'Q-Doc',
         icon: '📄',
-        title: 'Задачи',
+        title: 'Документооборот',
         points: ['Управление задачами и поручениями', 'Создание и согласование документов', 'Управление проектами'],
         effect: 'Скорость утверждений и принятия решений',
       },
@@ -293,7 +293,7 @@ const ru = {
   results: {
     eyebrow: 'Эффективность системы',
     head: ['Результаты', 'в цифрах'],
-    lead: 'Каждый показатель — реальное достижение, зафиксированное в ходе операционной деятельности на действующих объектах после внедрения E-Qamqorlyq.',
+    lead: 'Каждый показатель — реальное достижение, зафиксированное в ходе операционной деятельности на действующих объектах после внедрения eQamqorlyq.',
     beforeLabel: 'было',
     afterLabel: 'стало',
     items: [
@@ -308,7 +308,7 @@ const ru = {
   esg: {
     eyebrow: 'ESG и социальная миссия',
     head: ['Социальная', 'ответственность'],
-    lead: 'Open Soul inc. — не просто подрядчик, а социально ответственный партнёр, разделяющий ценности государственных институтов.',
+    lead: 'Open Soul Inc. — не просто подрядчик, а социально ответственный партнёр, разделяющий ценности государственных институтов.',
     crisis: [
       { value: '2 млн+', unit: 'порций', title: 'COVID-19', text: 'Ежедневная доставка трёхразового горячего питания 1 300 пациентам в провизорные центры Астаны в условиях жесточайшего карантина.' },
       { value: '7 000+', unit: 'порций', title: 'Паводки в СКО', text: 'Экстренное горячее питание для спасателей, пострадавших жителей и волонтёров в 2024–2025 годах.' },
@@ -347,10 +347,10 @@ const ru = {
     eyebrow: 'Отзывы',
     head: ['Что о нас', 'говорят?'],
     items: [
-      { text: 'Работаем с OpenSoulInc уже несколько лет, и за это время ни разу не столкнулись с проблемами в организации питания. Меню разнообразное, блюда всегда свежие, а персонал внимательный. Наши пациенты довольны, а для нас это главное!', name: 'Алина К.', role: 'Главный врач, ГБ №1 г. Астана', initials: 'АК' },
-      { text: 'Очень довольны работой OpenSoulInc! Блюда всегда свежие, вкусные и соответствуют диетическим требованиям. Пациенты положительно отзываются о питании, а персоналу приятно работать с такой ответственной компанией.', name: 'Наталья М.', role: 'Старшая медсестра, ГДБ №1 г. Астана', initials: 'НМ' },
-      { text: 'Выбирая поставщика питания, мы искали компанию, которая не просто выполняет обязательства, а стремится к развитию и инновациям. OpenSoulInc внедряет автоматизацию, что делает процесс работы прозрачным.', name: 'Андрей П.', role: 'Директор, ТОО «Restaurant Business»', initials: 'АП' },
-      { text: 'Как специалист, я обращаю особое внимание на сбалансированность рациона. OpenSoulInc отлично справляется с этой задачей — питание соответствует всем нормам, при этом остаётся вкусным и полезным.', name: 'Марина Т.', role: 'Диетолог, ТОО «Marketing Kz»', initials: 'МТ' },
+      { text: 'Работаем с Open Soul Inc уже несколько лет, и за это время ни разу не столкнулись с проблемами в организации питания. Меню разнообразное, блюда всегда свежие, а персонал внимательный. Наши пациенты довольны, а для нас это главное!', name: 'Алина К.', role: 'Главный врач, ГБ №1 г. Астана', initials: 'АК' },
+      { text: 'Очень довольны работой Open Soul Inc! Блюда всегда свежие, вкусные и соответствуют диетическим требованиям. Пациенты положительно отзываются о питании, а персоналу приятно работать с такой ответственной компанией.', name: 'Наталья М.', role: 'Старшая медсестра, ГДБ №1 г. Астана', initials: 'НМ' },
+      { text: 'Выбирая поставщика питания, мы искали компанию, которая не просто выполняет обязательства, а стремится к развитию и инновациям. Open Soul Inc внедряет автоматизацию, что делает процесс работы прозрачным.', name: 'Андрей П.', role: 'Директор, ТОО «Restaurant Business»', initials: 'АП' },
+      { text: 'Как специалист, я обращаю особое внимание на сбалансированность рациона. Open Soul Inc отлично справляется с этой задачей — питание соответствует всем нормам, при этом остаётся вкусным и полезным.', name: 'Марина Т.', role: 'Диетолог, ТОО «Marketing Kz»', initials: 'МТ' },
     ],
   },
   contact: {
@@ -362,10 +362,9 @@ const ru = {
     city: 'Астана, Казахстан',
     formTitle: 'Оставить заявку',
     info: [
-      { icon: '📞', key: 'Телефон', value: '+7 707 750 08 70', href: 'tel:+77077500870' },
-      { icon: '📱', key: 'Дополнительный', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
+      { icon: '📞', key: 'Телефон', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
       { icon: '✉️', key: 'Почта', value: 'info@opensoul.kz', href: 'mailto:info@opensoul.kz' },
-      { icon: '📍', key: 'Адрес', value: 'ул. Керей, Жанибек хандар, д. 5, офис 33' },
+      { icon: '📍', key: 'Адрес', value: 'ул. Керей, Жанибек хандар, д. 5, офис 36' },
       { icon: '🕗', key: 'Часы работы', value: 'Пн–Пт: 8:00 — 18:00 · ответим за один рабочий день' },
     ],
   },
@@ -386,7 +385,7 @@ const ru = {
       { label: 'Политика конфиденциальности', href: '#contact' },
       { label: 'eQamqorlyq.kz', href: 'https://eqamqorlyq.kz', ext: true },
     ],
-    rights: 'OpenSoulInc — организация питания',
+    rights: 'Open Soul Inc — организация питания',
   },
 };
 
@@ -395,7 +394,7 @@ const kz = {
     { id: 'map', label: 'География' },
     { id: 'journey', label: 'Қалай жұмыс істейді' },
     { id: 'features', label: 'Қызметтер' },
-    { id: 'platform', label: 'E-Qamqorlyq' },
+    { id: 'platform', label: 'eQamqorlyq' },
     { id: 'about', label: 'Компания туралы' },
     { id: 'news', label: 'Жаңалықтар' },
     { id: 'advantages', label: 'Артықшылықтар' },
@@ -446,7 +445,7 @@ const kz = {
     title: ['Осының бәрі —', 'осы сәт үшін'],
     cards: [
       { t: 'Палау, 300 г', s: 'техкарта бойынша порция' },
-      { t: 'Ортасында +75 °C', s: 'eQamqorlyq-та тіркеледі' },
+      { t: 'Ортасында +75 °C', s: 'АБК «eQamqorlyq»-та тіркеледі' },
       { t: 'Асханадан үстелге — 12 мин', s: 'кестеге дәл сәйкес' },
       { t: 'Мед. нормаға сай рацион', s: 'емдік үстелдер 1–15' },
     ],
@@ -474,7 +473,7 @@ const kz = {
         time: '09:40',
         step: 'Дайындау',
         title: 'Ас үй жұмыста',
-        text: 'Аспазшылар технологиялық карталар бойынша дайындайды. Тағамның ортасындағы температура, салу уақыты, порция салмағы — бәрі тіркеліп, eQamqorlyq-қа түседі.',
+        text: 'Аспазшылар технологиялық карталар бойынша дайындайды. Тағамның ортасындағы температура, салу уақыты, порция салмағы — бәрі тіркеліп, АБК «eQamqorlyq»-қа түседі.',
         meta: ['+75 °C және жоғары бақылау', 'Әр тағамға техкарта'],
       },
       {
@@ -495,7 +494,7 @@ const kz = {
         time: 'Кеше',
         step: 'Бастау',
         title: 'Өтінім және тапсырыс',
-        text: 'Бәрі осыдан басталады: мекеме өтінім қалдырады, диетолог күндік мәзірді қалыптастырады, жүйе сатып алу көлемін есептейді.',
+        text: 'Бәрі осыдан басталады: мекеме өтінім жібереді, диетолог күндік мәзірді қалыптастырады, жүйе сатып алу көлемін есептейді.',
         meta: ['Диетолог мәзірі', 'Автоматты есептеу'],
       },
     ],
@@ -538,9 +537,9 @@ const kz = {
     ],
   },
   stats: {
-    head: ['OpenSoulInc', 'сандармен'],
+    head: ['Open Soul Inc', 'сандармен'],
     items: [
-      { value: 29, suffix: '+', label: '2026 жылы басқарудағы нысан' },
+      { value: 30, suffix: '', label: '2026 жылы басқарудағы нысан' },
       { value: 10000, suffix: '+', label: 'Күн сайын тамақ алатын адам' },
       { value: 400, suffix: '+', label: 'Командадағы кәсіби маман' },
       { value: 40, suffix: '+', label: 'Жүзеге асқан жоба' },
@@ -560,7 +559,7 @@ const kz = {
   },
   timeline: {
     eyebrow: 'Жол',
-    head: ['OpenSoulInc', 'дамуы'],
+    head: ['Open Soul Inc', 'дамуы'],
     items: [
       { year: '2016', title: 'Компанияның құрылуы', text: 'Астанадағы «Abu Dhabi» көпфункционалды кешенін салу кезінде үздіксіз тамақпен қамтамасыз ету.' },
       { year: '2017', title: 'Нарыққа шығу', text: 'Алматы қаласындағы «Қысқы Универсиада-2017» халықаралық жарысында тамақтануды ұйымдастыру.' },
@@ -600,7 +599,7 @@ const kz = {
   },
   platform: {
     eyebrow: 'Технологиялық көшбасшылық',
-    head: ['E-Qamqorlyq —', 'цифрлық платформа'],
+    head: ['eQamqorlyq —', 'цифрлық платформа'],
     lead: 'Интеллектуалды бейнеаналитика мен ЖИ көмегімен тамақтануды басқару. Белсенді ауқымдау фазасындағы жеті модуль — кері байланыс терминалынан әр порцияның өзіндік құнын бақылауға дейін.',
     effectLabel: 'Негізгі әсері',
     modules: [
@@ -621,7 +620,7 @@ const kz = {
       {
         code: 'Q-Doc',
         icon: '📄',
-        title: 'Тапсырмалар',
+        title: 'Құжат айналымы',
         points: ['Тапсырмаларды басқару', 'Құжаттарды жасау және келісу', 'Жобаларды басқару'],
         effect: 'Бекіту мен шешім қабылдау жылдамдығы',
       },
@@ -670,7 +669,7 @@ const kz = {
   results: {
     eyebrow: 'Жүйе тиімділігі',
     head: ['Нәтижелер', 'сандармен'],
-    lead: 'Әрбір көрсеткіш — E-Qamqorlyq енгізілгеннен кейін жұмыс істеп тұрған нысандарда операциялық қызмет барысында тіркелген нақты жетістік.',
+    lead: 'Әрбір көрсеткіш — eQamqorlyq енгізілгеннен кейін жұмыс істеп тұрған нысандарда операциялық қызмет барысында тіркелген нақты жетістік.',
     beforeLabel: 'болды',
     afterLabel: 'болды',
     items: [
@@ -685,7 +684,7 @@ const kz = {
   esg: {
     eyebrow: 'ESG және әлеуметтік миссия',
     head: ['Әлеуметтік', 'жауапкершілік'],
-    lead: 'Open Soul inc. — жай мердігер емес, мемлекеттік институттардың құндылықтарын бөлісетін әлеуметтік жауапты серіктес.',
+    lead: 'Open Soul Inc. — жай мердігер емес, мемлекеттік институттардың құндылықтарын бөлісетін әлеуметтік жауапты серіктес.',
     crisis: [
       { value: '2 млн+', unit: 'порция', title: 'COVID-19', text: 'Қатаң карантин жағдайында Астананың провизорлық орталықтарындағы 1 300 пациентке күн сайын үш мезгіл ыстық тамақ жеткізу.' },
       { value: '7 000+', unit: 'порция', title: 'СҚО су тасқыны', text: '2024–2025 жылдары құтқарушыларға, зардап шеккен тұрғындар мен еріктілерге арналған шұғыл ыстық тамақ.' },
@@ -724,10 +723,10 @@ const kz = {
     eyebrow: 'Пікірлер',
     head: ['Біз туралы', 'не дейді?'],
     items: [
-      { text: 'OpenSoulInc-пен бірнеше жыл жұмыс істеп келеміз, осы уақыт ішінде тамақтануды ұйымдастыруда бірде-бір мәселеге тап болған жоқпыз. Мәзір алуан түрлі, тағамдар әрдайым жаңа, персонал ұқыпты. Пациенттеріміз риза!', name: 'Алина Қ.', role: 'Бас дәрігер, ҚА №1 Астана', initials: 'АҚ' },
-      { text: 'OpenSoulInc жұмысына өте риза! Тағамдар әрдайым жаңа, дәмді әрі диеталық талаптарға сай. Пациенттер тамақ туралы жақсы пікір айтады.', name: 'Наталья М.', role: 'Аға мейіргер, ҚБА №1 Астана', initials: 'НМ' },
-      { text: 'Тамақ жеткізушіні таңдағанда біз тек міндеттемені орындап қана қоймай, дамуға ұмтылатын компанияны іздедік. OpenSoulInc автоматтандыруды енгізіп, процесті ашық етеді.', name: 'Андрей П.', role: 'Директор, «Restaurant Business» ЖШС', initials: 'АП' },
-      { text: 'Маман ретінде рационның теңгерімділігіне ерекше көңіл бөлемін. OpenSoulInc бұл міндетті тамаша орындайды — тамақ барлық нормаға сай, әрі дәмді.', name: 'Марина Т.', role: 'Диетолог, «Marketing Kz» ЖШС', initials: 'МТ' },
+      { text: 'Open Soul Inc-пен бірнеше жыл жұмыс істеп келеміз, осы уақыт ішінде тамақтануды ұйымдастыруда бірде-бір мәселеге тап болған жоқпыз. Мәзір алуан түрлі, тағамдар әрдайым жаңа, персонал ұқыпты. Пациенттеріміз риза!', name: 'Алина Қ.', role: 'Бас дәрігер, ҚА №1 Астана', initials: 'АҚ' },
+      { text: 'Open Soul Inc жұмысына өте риза! Тағамдар әрдайым жаңа, дәмді әрі диеталық талаптарға сай. Пациенттер тамақ туралы жақсы пікір айтады.', name: 'Наталья М.', role: 'Аға мейіргер, ҚБА №1 Астана', initials: 'НМ' },
+      { text: 'Тамақ жеткізушіні таңдағанда біз тек міндеттемені орындап қана қоймай, дамуға ұмтылатын компанияны іздедік. Open Soul Inc автоматтандыруды енгізіп, процесті ашық етеді.', name: 'Андрей П.', role: 'Директор, «Restaurant Business» ЖШС', initials: 'АП' },
+      { text: 'Маман ретінде рационның теңгерімділігіне ерекше көңіл бөлемін. Open Soul Inc бұл міндетті тамаша орындайды — тамақ барлық нормаға сай, әрі дәмді.', name: 'Марина Т.', role: 'Диетолог, «Marketing Kz» ЖШС', initials: 'МТ' },
     ],
   },
   contact: {
@@ -739,10 +738,9 @@ const kz = {
     city: 'Астана, Қазақстан',
     formTitle: 'Өтінім қалдыру',
     info: [
-      { icon: '📞', key: 'Телефон', value: '+7 707 750 08 70', href: 'tel:+77077500870' },
-      { icon: '📱', key: 'Қосымша', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
+      { icon: '📞', key: 'Телефон', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
       { icon: '✉️', key: 'Пошта', value: 'info@opensoul.kz', href: 'mailto:info@opensoul.kz' },
-      { icon: '📍', key: 'Мекенжай', value: 'Керей, Жәнібек хандар к-сі, 5-үй, 33-кеңсе' },
+      { icon: '📍', key: 'Мекенжай', value: 'Керей, Жәнібек хандар к-сі, 5-үй, 36-кеңсе' },
       { icon: '🕗', key: 'Жұмыс уақыты', value: 'Дс–Жм: 8:00 — 18:00 · бір жұмыс күнінде жауап береміз' },
     ],
   },
@@ -763,7 +761,7 @@ const kz = {
       { label: 'Құпиялылық саясаты', href: '#contact' },
       { label: 'eQamqorlyq.kz', href: 'https://eqamqorlyq.kz', ext: true },
     ],
-    rights: 'OpenSoulInc — тамақтануды ұйымдастыру',
+    rights: 'Open Soul Inc — тамақтануды ұйымдастыру',
   },
 };
 
@@ -772,7 +770,7 @@ const en = {
     { id: 'map', label: 'Coverage' },
     { id: 'journey', label: 'How it works' },
     { id: 'features', label: 'Services' },
-    { id: 'platform', label: 'E-Qamqorlyq' },
+    { id: 'platform', label: 'eQamqorlyq' },
     { id: 'about', label: 'About' },
     { id: 'news', label: 'News' },
     { id: 'advantages', label: 'Advantages' },
@@ -823,7 +821,7 @@ const en = {
     title: ['This is what', 'the whole chain is for'],
     cards: [
       { t: 'Plov, 300 g', s: 'portion per spec chart' },
-      { t: '+75 °C at the core', s: 'logged in eQamqorlyq' },
+      { t: '+75 °C at the core', s: 'logged in the eQamqorlyq suite' },
       { t: 'Kitchen to table — 12 min', s: 'served right on schedule' },
       { t: 'Medically balanced diet', s: 'therapeutic diets 1–15' },
     ],
@@ -851,7 +849,7 @@ const en = {
         time: '09:40',
         step: 'Cooking',
         title: 'The kitchen at work',
-        text: 'Chefs cook by technological charts. Core temperature, timing, portion weight — all logged and sent to eQamqorlyq.',
+        text: 'Chefs cook by technological charts. Core temperature, timing, portion weight — all logged and sent to the eQamqorlyq hardware-software suite.',
         meta: ['Control at +75 °C and above', 'A chart for every dish'],
       },
       {
@@ -915,9 +913,9 @@ const en = {
     ],
   },
   stats: {
-    head: ['OpenSoulInc', 'in numbers'],
+    head: ['Open Soul Inc', 'in numbers'],
     items: [
-      { value: 29, suffix: '+', label: 'Facilities under management in 2026' },
+      { value: 30, suffix: '', label: 'Facilities under management in 2026' },
       { value: 10000, suffix: '+', label: 'People served daily' },
       { value: 400, suffix: '+', label: 'Professionals on the team' },
       { value: 40, suffix: '+', label: 'Completed projects' },
@@ -937,7 +935,7 @@ const en = {
   },
   timeline: {
     eyebrow: 'The path',
-    head: ['Growth of', 'OpenSoulInc'],
+    head: ['Growth of', 'Open Soul Inc'],
     items: [
       { year: '2016', title: 'Company founded', text: 'Uninterrupted catering during construction of the “Abu Dhabi” multifunctional complex in Astana.' },
       { year: '2017', title: 'Market entry', text: 'Catering for the international “Winter Universiade 2017” in Almaty.' },
@@ -977,7 +975,7 @@ const en = {
   },
   platform: {
     eyebrow: 'Technology leadership',
-    head: ['E-Qamqorlyq —', 'the digital platform'],
+    head: ['eQamqorlyq —', 'the digital platform'],
     lead: 'Catering management powered by intelligent video analytics and AI. Seven modules in active scale-up — from a feedback terminal to cost control on every single portion.',
     effectLabel: 'Key effect',
     modules: [
@@ -998,7 +996,7 @@ const en = {
       {
         code: 'Q-Doc',
         icon: '📄',
-        title: 'Tasks',
+        title: 'Document flow',
         points: ['Task and assignment management', 'Document creation and approval', 'Project management'],
         effect: 'Faster approvals and decision-making',
       },
@@ -1047,7 +1045,7 @@ const en = {
   results: {
     eyebrow: 'System efficiency',
     head: ['Results', 'in numbers'],
-    lead: 'Every figure is a real achievement recorded during operations at live facilities after E-Qamqorlyq was deployed.',
+    lead: 'Every figure is a real achievement recorded during operations at live facilities after eQamqorlyq was deployed.',
     beforeLabel: 'before',
     afterLabel: 'after',
     items: [
@@ -1062,7 +1060,7 @@ const en = {
   esg: {
     eyebrow: 'ESG and social mission',
     head: ['Social', 'responsibility'],
-    lead: 'Open Soul inc. is not just a contractor but a socially responsible partner that shares the values of state institutions.',
+    lead: 'Open Soul Inc. is not just a contractor but a socially responsible partner that shares the values of state institutions.',
     crisis: [
       { value: '2M+', unit: 'portions', title: 'COVID-19', text: 'Daily delivery of three hot meals to 1,300 patients in Astana provisional centers under the strictest quarantine.' },
       { value: '7,000+', unit: 'portions', title: 'Floods in North Kazakhstan', text: 'Emergency hot meals for rescuers, affected residents and volunteers in 2024–2025.' },
@@ -1101,10 +1099,10 @@ const en = {
     eyebrow: 'Testimonials',
     head: ['What people', 'say about us'],
     items: [
-      { text: 'We have worked with OpenSoulInc for several years and never once faced a problem with catering. The menu is varied, dishes are always fresh, and the staff is attentive. Our patients are happy — and that’s what matters most!', name: 'Alina K.', role: 'Chief physician, City Hospital No. 1, Astana', initials: 'AK' },
-      { text: 'We are very pleased with OpenSoulInc! The dishes are always fresh, tasty and meet dietary requirements. Patients speak highly of the food.', name: 'Natalya M.', role: 'Head nurse, Children’s Hospital No. 1, Astana', initials: 'NM' },
-      { text: 'Choosing a catering supplier, we looked for a company that not only meets obligations but strives to grow and innovate. OpenSoulInc brings automation that makes the process transparent.', name: 'Andrey P.', role: 'Director, “Restaurant Business” LLP', initials: 'AP' },
-      { text: 'As a specialist, I pay special attention to dietary balance. OpenSoulInc handles this brilliantly — the food meets every standard while staying tasty and healthy.', name: 'Marina T.', role: 'Dietitian, “Marketing Kz” LLP', initials: 'MT' },
+      { text: 'We have worked with Open Soul Inc for several years and never once faced a problem with catering. The menu is varied, dishes are always fresh, and the staff is attentive. Our patients are happy — and that’s what matters most!', name: 'Alina K.', role: 'Chief physician, City Hospital No. 1, Astana', initials: 'AK' },
+      { text: 'We are very pleased with Open Soul Inc! The dishes are always fresh, tasty and meet dietary requirements. Patients speak highly of the food.', name: 'Natalya M.', role: 'Head nurse, Children’s Hospital No. 1, Astana', initials: 'NM' },
+      { text: 'Choosing a catering supplier, we looked for a company that not only meets obligations but strives to grow and innovate. Open Soul Inc brings automation that makes the process transparent.', name: 'Andrey P.', role: 'Director, “Restaurant Business” LLP', initials: 'AP' },
+      { text: 'As a specialist, I pay special attention to dietary balance. Open Soul Inc handles this brilliantly — the food meets every standard while staying tasty and healthy.', name: 'Marina T.', role: 'Dietitian, “Marketing Kz” LLP', initials: 'MT' },
     ],
   },
   contact: {
@@ -1116,10 +1114,9 @@ const en = {
     city: 'Astana, Kazakhstan',
     formTitle: 'Leave a request',
     info: [
-      { icon: '📞', key: 'Phone', value: '+7 707 750 08 70', href: 'tel:+77077500870' },
-      { icon: '📱', key: 'Additional', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
+      { icon: '📞', key: 'Phone', value: '+7 771 505 80 00', href: 'tel:+77715058000' },
       { icon: '✉️', key: 'Email', value: 'info@opensoul.kz', href: 'mailto:info@opensoul.kz' },
-      { icon: '📍', key: 'Address', value: 'Kerey, Zhanibek Khandar St. 5, office 33' },
+      { icon: '📍', key: 'Address', value: 'Kerey, Zhanibek Khandar St. 5, office 36' },
       { icon: '🕗', key: 'Working hours', value: 'Mon–Fri: 8:00 — 18:00 · we reply within one business day' },
     ],
   },
@@ -1140,7 +1137,7 @@ const en = {
       { label: 'Privacy policy', href: '#contact' },
       { label: 'eQamqorlyq.kz', href: 'https://eqamqorlyq.kz', ext: true },
     ],
-    rights: 'OpenSoulInc — catering services',
+    rights: 'Open Soul Inc — catering services',
   },
 };
 

@@ -86,8 +86,8 @@ export default function Nav({ show = true }) {
       >
         <div className="wrap">
           <div className="nav-inner">
-            <a href="#top" className="logo" aria-label="OpenSoulInc">
-              <img src="/logo.png" alt="OpenSoulInc" className="logo-img" />
+            <a href="#top" className="logo" aria-label="Open Soul Inc">
+              <img src="/logo.png" alt="Open Soul Inc" className="logo-img" />
             </a>
 
             <div className="nav-links" onMouseLeave={() => setHover(null)}>

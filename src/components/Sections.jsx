@@ -629,8 +629,8 @@ export function Contact() {
                 {s.ctaLead}
               </p>
               <Magnetic>
-                <a href="tel:+77077500870" className="btn btn-primary">
-                  +7 707 750 08 70 <span className="arw">→</span>
+                <a href="tel:+77715058000" className="btn btn-primary">
+                  +7 771 505 80 00 <span className="arw">→</span>
                 </a>
               </Magnetic>
             </div>
@@ -725,8 +725,8 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <a href="#top" className="logo" style={{ marginBottom: 18 }} aria-label="OpenSoulInc">
-              <img src="/logo.png" alt="OpenSoulInc" className="logo-img footer-logo" />
+            <a href="#top" className="logo" style={{ marginBottom: 18 }} aria-label="Open Soul Inc">
+              <img src="/logo.png" alt="Open Soul Inc" className="logo-img footer-logo" />
             </a>
             <p className="lead" style={{ fontSize: 14, maxWidth: 340, marginTop: 16 }}>
               {s.tagline}
@@ -765,7 +765,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} {s.rights}</span>
-          <span>info@opensoul.kz · +7 707 750 08 70 · +7 771 505 80 00</span>
+          <span>info@opensoul.kz · +7 771 505 80 00</span>
         </div>
       </div>
     </footer>
